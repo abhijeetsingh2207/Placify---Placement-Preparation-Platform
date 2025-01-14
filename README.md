@@ -1,4 +1,4 @@
-* This is our major project which is based on Dynamic Web Application.
+* This is our major project which is based on Dynamic Web Application generated on Eclipse IDE.
 * In this project there will be 3 modules (Student, Coordinator, Admin).
 * Admin have the power to manage the Student and Teacher (Verification of authorized access), Deleting data of the ex-coordinator and passout students... etc. 
 * Coordinator have the power to generate the information, GUI feedback, syllabus, quizzes, can check the performance of the students and coordinator can edit there information also... etc.
