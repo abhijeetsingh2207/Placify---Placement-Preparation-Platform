@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, black,rgb(82, 73, 73));
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Card Container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Individual Card Styling */
+  .card {
+    background: none;
+    border-radius: 15px;
+    padding: 51px;
+    margin: 75px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  }
+  
+  .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #c7c7c7;
+  }
+  
+  /* Button Styling */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #222831;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn:hover {
+    background: #67e8e1;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 255, 200, 0.3);
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+    }
+  
+    .card {
+      max-width: 100%;
+    }
+  
+    .page-title {
+      font-size: 2rem;
+    }
+  }

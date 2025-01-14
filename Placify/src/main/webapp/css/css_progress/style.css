@@ -1,0 +1,324 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Title Animation */
+.title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Leaderboard Items */
+#leaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Individual Leaderboard Item */
+.leaderboard-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.5s ease-in-out;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-wrap: wrap; /* Ensures no overflow on small screens */
+}
+
+.leaderboard-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Table-like Layout */
+.leaderboard-item span {
+    flex: 1;
+    text-align: center;
+    word-wrap: break-word; /* Prevents text overflow */
+}
+
+.leaderboard-item span:first-child {
+    text-align: left;
+    flex: 0.5; /* Smaller width for rank */
+}
+
+.leaderboard-item span:last-child {
+    text-align: right;
+    flex: 1; /* Align score to the right */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+
+/* Medium Screens */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .leaderboard-container {
+        padding: 15px;
+    }
+
+    .leaderboard-item {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .leaderboard-item span:first-child {
+        flex: 0.8; /* Adjust rank column width for smaller screens */
+    }
+
+    .leaderboard-item span:last-child {
+        flex: 1;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .leaderboard-container {
+        padding: 10px;
+    }
+
+    .leaderboard-item {
+        font-size: 0.8rem;
+        flex-direction: column; /* Stack content for very small screens */
+        align-items: flex-start;
+        text-align: left;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .leaderboard-item span {
+        flex: none;
+        text-align: left;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    /* Ensure columns stack nicely on very small screens */
+    .leaderboard-item span:first-child {
+        text-align: left;
+        width: 100%;
+    }
+
+    .leaderboard-item span:last-child {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* Ultra-Small Screens */
+@media (max-width: 320px) {
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .leaderboard-container {
+        padding: 10px;
+    }
+
+    .leaderboard-item {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
+}
+
+
+/* Floating Download Button Styles */
+/* Floating Download Button Styles */
+.floating-download-button {
+    position: fixed;
+    top: 54px;
+    right: 375px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-download-button:hover {
+    background-color: #ee3c30;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.floating-download-button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .floating-download-button {
+        top: 20px; /* Adjust position for smaller screens */
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-download-button {
+        top: 18px;
+        right: 39px;
+        width: 47px;
+        height: 44px;
+        font-size: 1rem;
+    }
+}
+
+
+/* Dropdown Styling */
+.dropdown {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#quizTitle {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#quizTitle:hover {
+    background: #eee;
+}
+
+/* Add styles for the title selector dropdown */
+.title-selector {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.title-selector:focus {
+    border: 2px solid #6e8efb;
+    box-shadow: 0 0 10px rgba(110, 142, 251, 0.5);
+}
+
+/* Title Select Dropdown */
+#titleSelect {
+    width: 250px;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#titleSelect:hover {
+    background-color: #e1e1e1;
+    border-color: #aaa;
+}
+
+#titleSelect:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #ffffff;
+}
+
+#titleSelect option {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Label for Title Select */
+label[for="titleSelect"] {
+    font-size: 18px;
+    font-weight: bold;
+    color: whitesmoke;
+    margin-right: 10px;
+}

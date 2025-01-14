@@ -1,0 +1,393 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: #f2f5f7;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+body{
+  overflow-x: hidden;
+}
+nav{
+  height: 6rem;
+  width: 100vw;
+  background-color: #131418;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between; /* Adjusted to properly align logo and nav items */
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  padding: 0 2rem; /* Added padding for spacing */
+}
+
+/*Styling logo*/
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f2f5f7;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #89F7FE, #66A6FF); /* Gradient for the logo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; /* Centers the logo */
+}
+
+/* Hover effect on the logo */
+.logo-text:hover {
+  background: linear-gradient(45deg, #FDB813, #FF4E50); /* Gradient changes on hover */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*Styling Links*/
+.nav-links{
+  display: flex;
+  list-style: none; 
+  padding: 0;
+  margin-top: 1.8%;
+  justify-content: center;
+  flex-grow: 1; /* Ensure links are evenly distributed */
+}
+.nav-links li {
+  margin: 0 1vw; /* Ensures no extra dots or spacing issues */
+}
+/* Initial link styling */
+/* New Hover Effect: Bottom-to-Top Background Fill */
+.nav-links li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #f2f5f7;
+  padding: 10px 15px; /* Added padding for better clickability */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  overflow: hidden; /* Hides overflow for smooth hover effect */
+}
+
+/* Hover effect that fills background from the bottom */
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #89F7FE, #66A6FF); /* Gradient color for background fill */
+  z-index: -1;
+  transform: scaleY(0); /* Initial state: background is hidden */
+  transform-origin: bottom; /* Transforms from bottom */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* On hover, the background fills smoothly from bottom to top */
+.nav-links li a:hover::before {
+  transform: scaleY(1); /* Background grows to full height */
+}
+
+/* Change the text color on hover for contrast */
+.nav-links li a:hover {
+  color: #131418; /* Dark color to contrast with the background */
+}
+
+
+/*Styling Buttons*/
+.login-button{
+background-color: transparent;
+  border: 1.5px solid #f2f5f7;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  margin-right: 10%;
+  cursor: pointer;
+  width: 130px;
+  margin-inline: 10px;
+}
+.login-button:hover {
+  color: #131418;
+  background-color: #f2f5f7;
+  border: 1.5px solid #f2f5f7;
+  transition: all ease-in-out 350ms;
+}
+
+/*section css*/
+.home-section {
+min-height: 100vh;
+background: linear-gradient(to right, #009dff, #51e18f); /* Gradient background */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.text-content {
+color: white;
+padding-right: 20px;
+animation: fadeInLeft 1.5s ease-out;
+}
+
+.title {
+font-size: 3.5rem;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+.description {
+font-size: 1.25rem;
+margin-bottom: 30px;
+line-height: 1.8;
+max-width: 500px;
+}
+
+.btn-explore {
+padding: 12px 30px;
+background-color: #ffb703;
+border: none;
+color: #004d40;
+font-size: 1.1rem;
+font-weight: 600;
+border-radius: 30px;
+transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+background-color: #fb8500;
+color: white;
+}
+
+/* Image Styling with 3D Tilt Effect */
+.image-content {
+padding: 20px;
+animation: fadeInRight 1.5s ease-out;
+perspective: 1000px; /* Create 3D perspective */
+}
+
+.img-wrapper {
+display: inline-block;
+width: 70%; /* Set image size to 50% */
+transition: transform 0.6s ease, box-shadow 0.6s ease;
+transform-style: preserve-3d;
+will-change: transform;
+}
+
+/* 3D Tilt Effect on Hover */
+.img-wrapper:hover {
+transform: rotateY(15deg) rotateX(15deg); /* 3D tilt effect */
+box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.img-wrapper:hover .placement-img {
+transform: scale(1.05); /* Slight zoom */
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+.home-section {
+    padding: 20px;
+}
+.text-content {
+    text-align: center;
+    padding-right: 0;
+}
+.title {
+    font-size: 2.5rem;
+}
+.description {
+    font-size: 1.1rem;
+}
+}
+
+@media (max-width: 768px) {
+.row {
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.description {
+    font-size: 1rem;
+}
+
+.img-wrapper {
+    width: 70%; /* Larger image for smaller screens */
+}
+
+.placement-img {
+    margin-top: 20px;
+}
+}
+
+/* Animation */
+@keyframes fadeInLeft {
+from { opacity: 0; transform: translateX(-50px); }
+to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+from { opacity: 0; transform: translateX(50px); }
+to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+
+/* Services Section */
+/* Services Section */
+.services-section {
+padding: 60px 0;
+background-color: #f1f1f1; /* Light background for contrast */
+}
+
+.services-heading {
+text-align: center;
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 40px;
+color: #004d40;
+}
+
+/* Make the card links fill the card container */
+.service-card-link {
+text-decoration: none; /* Remove underline from links */
+}
+
+.service-card {
+background-color: #ffffff;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+padding: 30px;
+text-align: center;
+transition: all 0.3s ease;
+position: relative; /* For pseudo-element positioning */
+overflow: hidden; /* Ensure hover effect stays within card */
+}
+
+.service-card:hover {
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+transform: translateY(-10px);
+color: white; /* Change text color on hover */
+}
+
+/* Hover effect background color */
+.service-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #007bff; /* Dark teal background on hover */
+z-index: -1; /* Behind the text */
+transition: opacity 0.3s ease;
+opacity: 0; /* Initially invisible */
+}
+
+.service-card:hover::before {
+opacity: 1; /* Show background on hover */
+}
+
+.service-icon {
+font-size: 3rem;
+color: #007bff;;
+margin-bottom: 20px;
+}
+
+.service-card h3 {
+font-size: 1.5rem;
+color: black; /* Inherit color from parent (white on hover) */
+margin-bottom: 15px;
+}
+
+.service-card p {
+font-size: 1rem;
+color: black; /* Inherit color from parent (white on hover) */
+margin-bottom: 0;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+.service-card {
+    margin-bottom: 20px;
+}
+
+.services-heading {
+    font-size: 2rem;
+}
+}
+
+
+/* Footer */
+.footer {
+background-color: #343a40; /* Dark background for footer */
+}
+
+.footer-logo h1 {
+font-size: 2.5rem;
+font-weight: 700;
+color: #007bff; /* Bright blue logo text */
+}
+
+.footer p {
+font-size: 1rem;
+color: #f8f9fa; /* Light text color */
+}
+
+.footer h5 {
+font-size: 1.25rem;
+color: #007bff; /* Bright blue heading */
+}
+
+.footer ul {
+padding-left: 0;
+list-style: none;
+}
+
+.footer ul li {
+margin-bottom: 10px;
+}
+
+.footer ul li a {
+color: #f8f9fa; /* Light link color */
+text-decoration: none;
+}
+
+.footer ul li a:hover {
+text-decoration: underline;
+}
+
+.footer i {
+margin-right: 10px;
+}
+
+.footer .bi {
+font-size: 1.5rem;
+}
+
+.footer .text-light {
+color: #f8f9fa !important; /* Light text color for links */
+}
+
+.footer .text-primary {
+color: #007bff !important; /* Bright blue for important elements */
+}
+
+.footer .text-center p {
+margin-bottom: 0;
+}
+
+.footer .social-links a {
+color: #f8f9fa;
+font-size: 1.5rem;
+}
+
+.footer .social-links a:hover {
+color: #007bff;
+}

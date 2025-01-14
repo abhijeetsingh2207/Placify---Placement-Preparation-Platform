@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 2.5rem;
+    color: #2d3a3f;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* No Quizzes Message */
+.no-quiz-msg {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Quiz Cards Container */
+.quiz-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Quiz Card */
+.quiz-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Cards */
+.quiz-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header */
+.card-header {
+    padding: 20px;
+    background-color: #3498db;
+    color: #fff;
+    border-bottom: 2px solid #2980b9;
+}
+
+.quiz-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.quiz-dates {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+.start-btn {
+    display: inline-block;
+    background-color: #27ae60;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Button */
+.start-btn:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px);
+}
+
+.start-btn:active {
+    transform: translateY(1px);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to quiz cards */
+.quiz-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Animation delay for staggered effect */
+.quiz-card:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.quiz-card:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .quiz-cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+    }
+}

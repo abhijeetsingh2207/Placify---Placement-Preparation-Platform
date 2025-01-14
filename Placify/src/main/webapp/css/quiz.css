@@ -1,0 +1,122 @@
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Centering and background */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(16deg, black, navy);
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  max-width: 100%;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Header styling */
+h1 {
+  font-size: 2rem;
+  margin-top: 73px;
+  margin-bottom: 82px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+/* Card styling */
+.cards {
+  display: flex;
+  gap: 209px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  color: #333;
+  padding: 30px 20px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(80, 227, 194, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  z-index: 1;
+  position: relative;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  z-index: 1;
+  position: relative;
+}
+
+/* Animation for cards */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards {
+  
+  margin-top: -50px;
+      flex-direction: column;
+  gap: 20px;
+      align-items: center;
+  }
+  h1 {
+      font-size: 1.6rem;
+  }
+}

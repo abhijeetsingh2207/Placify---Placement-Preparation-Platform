@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+form {
+    width: 100%;
+}
+
+div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Labels and Inputs */
+label {
+    font-size: 1.1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+input[type="text"], input[type="number"], input[type="datetime-local"], select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="datetime-local"]:focus, select:focus {
+    border-color: #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Add Question Button */
+#add-question {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#add-question:hover {
+    background-color: #0056b3;
+}
+
+#add-question:active {
+    transform: translateY(2px);
+}
+
+/* Question Section */
+#questions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.question input[type="text"], .question select {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    input[type="text"], input[type="number"], input[type="datetime-local"], select {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .question {
+        padding: 15px;
+    }
+}
